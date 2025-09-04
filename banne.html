@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="print-color-adjust" content="exact">
+    <title>참정성 우리상조 - 스탠딩 배너</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .banner-container {
+            width: 600px;
+            height: 1800px;
+            background: linear-gradient(180deg, #faf8f5 0%, #f5f2ed 25%, #f0ede8 50%, #f5f2ed 75%, #faf8f5 100%);
+            overflow: hidden;
+            font-family: 'Noto Sans KR', sans-serif;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            
+            /* 인쇄 품질 최적화 */
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .banner-main {
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(139,182,155,0.06) 0%, transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(168,197,168,0.04) 0%, transparent 40%);
+            padding: 52px 52px 45px 52px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 20% 20%, #8bb69b 1.5px, transparent 1.5px),
+                radial-gradient(circle at 80% 80%, #a8c5a8 1px, transparent 1px);
+            background-size: 120px 120px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #8bb69b;
+            font-weight: 500;
+            margin-bottom: 15px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .main-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #4a5568;
+            line-height: 1.15;
+            margin-bottom: 26px;
+            letter-spacing: -0.03em;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .main-title .highlight {
+            color: #6BB68E !important;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .main-title .highlight::before {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: -4px;
+            right: -4px;
+            height: 12px;
+            background: linear-gradient(90deg, rgba(154,199,194,0.2) 0%, rgba(154,199,194,0.3) 100%);
+            border-radius: 6px;
+            z-index: -1;
+        }
+
+        .emotional-text {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.1rem;
+            color: #4a5568;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 37px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        .visual-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .main-visual {
+            width: 400px;
+            height: 260px;
+            background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
+            border-radius: 15px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 
+                0 20px 40px rgba(107,182,142,0.08),
+                0 8px 20px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid rgba(107,182,142,0.12);
+        }
+
+        .visual-icon {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, #6BB68E 0%, #7aa88a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            color: white;
+            margin-bottom: 19px;
+            box-shadow: 
+                0 12px 24px rgba(107,182,142,0.2),
+                0 4px 8px rgba(107,182,142,0.1);
+            z-index: 2;
+            position: relative;
+        }
+
+        .visual-title {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.7rem;
+            color: #6BB68E;
+            font-weight: 700;
+            margin-bottom: 15px;
+            z-index: 2;
+            position: relative;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+        }
+
+        .visual-desc {
+            color: #2c3e50;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            z-index: 2;
+            position: relative;
+            max-width: 360px;
+            margin: 0 auto;
+            font-weight: 500;
+            word-break: keep-all;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .features-section {
+            margin-bottom: 26px;
+        }
+
+        .story-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 15px;
+            box-shadow: 
+                0 10px 25px rgba(107,182,142,0.06),
+                0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid rgba(107,182,142,0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #6BB68E 0%, #7aa88a 100%);
+        }
+
+        .story-title {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .story-icon {
+            margin-right: 11px;
+            font-size: 1.5rem;
+        }
+
+        .story-desc {
+            color: #2c3e50;
+            line-height: 1.7;
+            font-size: 0.9rem;
+            font-weight: 500;
+            word-break: keep-all;
+            word-wrap: break-word;
+        }
+
+        .heart-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 19px;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .heart-card {
+            flex: 1;
+            text-align: center;
+            padding: 19px 14px;
+            background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(107,182,142,0.10);
+            box-shadow: 
+                0 8px 20px rgba(107,182,142,0.05),
+                0 3px 10px rgba(0,0,0,0.03);
+        }
+
+        .heart-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #6BB68E 0%, #7aa88a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.4rem;
+            color: white;
+            box-shadow: 0 8px 16px rgba(107,182,142,0.15);
+        }
+
+        .heart-text {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .intro-main-text {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            font-family: 'Noto Serif KR', serif;
+            font-style: italic;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        .intro-sub-text {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+            max-width: 338px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .company-logo {
+            margin-bottom: 30px;
+        }
+
+        .company-name {
+            font-size: 2.1rem;
+            color: #6BB68E;
+            font-weight: 700;
+            margin-bottom: 11px;
+            font-family: 'Noto Serif KR', serif;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .company-tagline {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-style: italic;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .main-card {
+            background: #faf8f5;
+            border-radius: 9px;
+            padding: 12px 15px 8px 15px;
+            margin-bottom: 15px;
+            box-shadow: 
+                0 6px 15px rgba(107,182,142,0.06),
+                0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .links-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .links-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 100%;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 38px;
+            border: 0.5px solid #5AD077;
+            margin: 0;
+            box-sizing: border-box;
+            width: 80%;
+            min-height: 42px;
+        }
+
+        .search-icons {
+            display: flex;
+            align-items: center;
+            margin-right: 11px;
+            gap: 3px;
+            width: 42px;
+            flex-shrink: 0;
+        }
+
+        .search-text {
+            margin-left: 0;
+        }
+
+        .simple-link-row {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            margin: 0;
+            box-sizing: border-box;
+            width: 80%;
+        }
+
+        .simple-icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+
+        .search-box .simple-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 4px;
+        }
+
+        .simple-link-icons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-right: 11px;
+            width: 42px;
+            flex-shrink: 0;
+            margin-left: 0;
+        }
+
+        .simple-text {
+            margin-left: -22px;
+        }
+
+        .simple-link-row .simple-icon {
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+            margin-right: 0;
+        }
+
+        .simple-icon.naver {
+            background: transparent;
+            color: #03C75A;
+            font-weight: 900;
+        }
+
+        .simple-icon.google {
+            background: transparent;
+            color: #4285F4;
+            font-weight: 900;
+            margin-left: 3px;
+        }
+
+        .simple-icon.home {
+            background: transparent;
+            color: #03C75A;
+        }
+
+        .simple-icon.kakao {
+            background: transparent;
+            color: #3C1E1E;
+            border-radius: 50%;
+        }
+
+        .search-text {
+            font-size: 1.0rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .simple-text {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* 중간 링크 강조 사이즈 */
+        .simple-text.emphasis {
+            font-size: 1.15rem;
+        }
+
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid #6BB68E;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.45rem;
+            color: #6BB68E;
+            text-align: center;
+            line-height: 1.1;
+            font-weight: 600;
+            margin-bottom: 6px;
+            box-shadow: 0 6px 16px rgba(107,182,142,0.12);
+        }
+
+        .qr-text {
+            font-size: 0.8rem;
+            color: #1a1a1a;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .final-message {
+            font-size: 0.9rem;
+            color: #4a5568;
+            font-weight: 500;
+            line-height: 1.6;
+            font-family: 'Noto Serif KR', serif;
+            font-style: italic;
+            opacity: 1;
+            padding: 0 15px;
+            margin-top: 20px;
+        }
+
+        .floating-hearts {
+            display: none;
+        }
+
+        /* 프린트용 CSS - 불필요한 배경 제거 */
+        @media print {
+            * {
+                background: transparent !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            
+            .banner-container {
+                background: white !important;
+                box-shadow: none !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+            
+            .banner-main {
+                background: white !important;
+                padding: 30px 30px 30px 30px !important;
+            }
+            
+            .background-pattern {
+                display: none !important;
+            }
+            
+            .main-visual {
+                background: white !important;
+                box-shadow: none !important;
+                border: 2px solid #e0e0e0 !important;
+            }
+            
+            .visual-icon {
+                background: #6BB68E !important;
+                box-shadow: none !important;
+            }
+            
+            .story-card {
+                background: white !important;
+                box-shadow: none !important;
+                border: 2px solid #e0e0e0 !important;
+            }
+            
+            .story-card::before {
+                background: #6BB68E !important;
+                height: 3px !important;
+            }
+            
+            .heart-card {
+                background: white !important;
+                box-shadow: none !important;
+                border: 2px solid #e0e0e0 !important;
+            }
+            
+            .heart-icon {
+                background: #6BB68E !important;
+                box-shadow: none !important;
+            }
+            
+            .contact-icon {
+                background: #6BB68E !important;
+                box-shadow: none !important;
+            }
+            
+            .qr-code {
+                background: white !important;
+                border: 2px solid #6BB68E !important;
+                box-shadow: none !important;
+            }
+            
+            .main-title .highlight::before {
+                background: rgba(107,182,142,0.1) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <div class="background-pattern"></div>
+        
+        <div class="banner-main">
+
+            
+            <div class="header-section">
+                <div class="subtitle">Your Last Story</div>
+                <h1 class="main-title">
+                    당신의 인생 이야기<br>
+                    <span class="highlight">마지막 페이지</span>까지<br>
+                    아름답게
+                </h1>
+                
+                <p class="emotional-text">
+                    "그때를 후회 없이 맞이할 수 있도록,<br>
+                    오늘 차분히 준비합니다."
+                </p>
+            </div>
+            
+            <div class="visual-section">
+                <div class="main-visual">
+                    <div class="visual-icon">🌸</div>
+                    <h3 class="visual-title">나만의 엔딩스토리</h3>
+                    <p class="visual-desc">
+                        마지막 길이 아픔이 아닌 위로와 치유의 시간이 되도록,<br>
+                        미리 준비하고, 가족에게는 마지막 배려를 전하세요.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <div class="story-card">
+                    <div class="story-title">
+                        <span class="story-icon">💌</span>
+                        당신만의 엔딩플랜
+                    </div>
+                    <div class="story-desc">
+                        원하는 방식으로 미리 준비하고 지정인과 안심 공유로 소중한 뜻을 함께 지켜드립니다.
+                        온라인 가입 시 엔딩플랜 서비스를 무료로 제공해드립니다.
+                    </div>
+                </div>
+                
+                <div class="heart-section">
+                    <div class="heart-card">
+                        <div class="heart-icon">🌿</div>
+                        <div class="heart-text">맞춤형<br>엔딩플랜</div>
+                    </div>
+                    <div class="heart-card">
+                        <div class="heart-icon">🤗</div>
+                        <div class="heart-text">지정인<br>안심공유</div>
+                    </div>
+                    <div class="heart-card">
+                        <div class="heart-icon">💙</div>
+                        <div class="heart-text">유가족<br>마음케어</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="intro-section">
+                <div class="intro-main-text">
+                    사랑하는 사람들에게<br>부담이 아닌 선물을
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <div class="company-logo">
+                    <img src="https://cdn.imweb.me/upload/S20240410f6b6feb524b76/d9a94289e4145.png" 
+                         alt="회사 로고" 
+                         style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 25px;">
+                    <div class="company-name">참정성가득 우리상조</div>
+                    <div class="company-tagline">국내 최초 마음케어 전문 상조</div>
+                </div>
+                
+                <div class="main-card">
+                    <div class="links-container">
+                        <div class="links-left">
+                            <div class="search-box">
+                                <div class="search-icons">
+                                    <div class="simple-icon naver">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="20" rx="3" fill="#03C75A"/>
+                                            <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">N</text>
+                                        </svg>
+                                    </div>
+                                    <div class="simple-icon google">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19.6 10.2273C19.6 9.51818 19.5364 8.83636 19.4182 8.18182H10V12.05H15.3818C15.15 13.3 14.4455 14.3591 13.3864 15.0682V17.5773H16.6182C18.5091 15.8364 19.6 13.2727 19.6 10.2273Z" fill="#4285F4"/>
+                                            <path d="M10 20C12.7 20 14.9636 19.1045 16.6182 17.5773L13.3864 15.0682C12.4909 15.6682 11.3455 16.0227 10 16.0227C7.39545 16.0227 5.19091 14.2636 4.40455 11.9H1.06364V14.4909C2.70909 17.7591 6.09091 20 10 20Z" fill="#34A853"/>
+                                            <path d="M4.40455 11.9C4.20455 11.3 4.09091 10.6591 4.09091 10C4.09091 9.34091 4.20455 8.7 4.40455 8.1V5.50909H1.06364C0.386364 6.85909 0 8.38636 0 10C0 11.6136 0.386364 13.1409 1.06364 14.4909L4.40455 11.9Z" fill="#FBBC05"/>
+                                            <path d="M10 3.97727C11.4682 3.97727 12.7864 4.48182 13.8227 5.47273L16.6909 2.60455C14.9591 0.990909 12.6955 0 10 0C6.09091 0 2.70909 2.24091 1.06364 5.50909L4.40455 8.1C5.19091 5.73636 7.39545 3.97727 10 3.97727Z" fill="#EA4335"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="search-text">참정성가득 우리상조</span>
+                            </div>
+                            
+                            <div class="simple-link-row">
+                                <div class="simple-link-icons">
+                                    <div class="simple-icon home">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.33333 16.6667V11.6667H11.6667V16.6667H16.6667V9.83333H18.3333L10 1.66667L1.66667 9.83333H3.33333V16.6667H8.33333Z" fill="#02B351"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="simple-text emphasis">Trueheartfn.com</span>
+                            </div>
+                            
+                            <div class="simple-link-row">
+                                <div class="simple-link-icons">
+                                    <div class="simple-icon kakao">
+                                        <img src="https://cdn-icons-png.freepik.com/512/3991/3991999.png" alt="KakaoTalk" style="width: 20px; height: 20px; border-radius: 50%;">
+                                    </div>
+                                </div>
+                                <span class="simple-text">참정성가득 우리상조</span>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-section">
+                            <div class="qr-code">
+                                <img src="https://cdn.imweb.me/upload/S20240410f6b6feb524b76/e6ba82ccfbd10.png" 
+                                     alt="QR코드" 
+                                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="qr-text">홈페이지<br>바로가기</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="final-message">
+                    생의 마지막이 아픔이 아닌 위로와 치유의 순간이 될 수 있도록<br>
+                    <strong>참정성으로 모시겠습니다</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
